@@ -10,7 +10,7 @@ async function pageLoaded() {
   for (let i=0; i<json.length; i++){
     let ride = json[i]
   
-
+// Noober Pool
   
   if (ride.length > 1) {
     levelOfService = 'Noober Pool'
@@ -22,93 +22,56 @@ async function pageLoaded() {
       </h1>
     `)
 
-  for (let i=0; i<ride.length; i++) {
-    document.querySelector('.rides').insertAdjacentHTML('beforeend',`
-  <div class="border-4 border-gray-900 p-4 my-4 text-left">
-    <div class="flex">
-      <div class="w-1/2">
-        <h2 class="text-2xl py-1">${ride[i].passengerDetails.first} ${ride[i].passengerDetails.last}</h2>
-        <p class="font-bold text-gray-600">${ride[i].passengerDetails.phoneNumber}</p>
-      </div>
-      <div class="w-1/2 text-right">
-        <span class="rounded-xl bg-gray-600 text-white p-2">
-          ${ride[i].numberOfPassengers} passengers
-        </span>
-      </div>
-    </div>
-    <div class="mt-4 flex">
-      <div class="w-1/2">
-        <div class="text-sm font-bold text-gray-600">PICKUP</div>
-        <p>${ride[i].pickupLocation.address}</p>
-        <p>${ride[i].pickupLocation.city}, ${ride[i].pickupLocation.state}, ${ride[i].pickupLocation.zip}</p>
-      </div>
-      <div class="w-1/2">
-        <div class="text-sm font-bold text-gray-600">DROPOFF</div>
-        <p>${ride[i].dropoffLocation.address}</p>
-        <p>${ride[i].dropoffLocation.city}, ${ride[i].dropoffLocation.state}, ${ride[i].dropoffLocation.zip}</p>
-      </div>
-    </div>
-  </div>
-  
-      `)}
-
+    for (let i=0; i<ride.length; i++) {
+      document.querySelector('.rides').insertAdjacentHTML('beforeend',`
+        
+        <div class="border-4 border-gray-900 p-4 my-4 text-left">
+          <div class="flex">
+            <div class="w-1/2">
+              <h2 class="text-2xl py-1">${ride[i].passengerDetails.first} ${ride[i].passengerDetails.last}</h2>
+              <p class="font-bold text-gray-600">${ride[i].passengerDetails.phoneNumber}</p>
+            </div>
+            <div class="w-1/2 text-right">
+              <span class="rounded-xl bg-gray-600 text-white p-2">
+                ${ride[i].numberOfPassengers} passengers
+              </span>
+            </div>
+          </div>
+          <div class="mt-4 flex">
+            <div class="w-1/2">
+              <div class="text-sm font-bold text-gray-600">PICKUP</div>
+              <p>${ride[i].pickupLocation.address}</p>
+              <p>${ride[i].pickupLocation.city}, ${ride[i].pickupLocation.state} ${ride[i].pickupLocation.zip}</p>
+            </div>
+            <div class="w-1/2">
+              <div class="text-sm font-bold text-gray-600">DROPOFF</div>
+              <p>${ride[i].dropoffLocation.address}</p>
+              <p>${ride[i].dropoffLocation.city}, ${ride[i].dropoffLocation.state} ${ride[i].dropoffLocation.zip}</p>
+            </div>
+          </div>
+        </div>
+    
+      `)
+     }
+// Noober Purple
 } else if (ride[0].purpleRequested) {
     let levelOfService = 'Noober Purple'
 
   document.querySelector('.rides').insertAdjacentHTML('beforeend',`
-
-  <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-    <i class="fas fa-car-side"></i>
-    <span>${levelOfService}</span>
-  </h1>
-
-  <div class="border-4 border-purple-500 p-4 my-4 text-left">
-    <div class="flex">
-      <div class="w-1/2">
-        <h2 class="text-2xl py-1">${ride[0].passengerDetails.first} ${ride[0].passengerDetails.last}</h2>
-        <p class="font-bold text-gray-600">${ride[0].passengerDetails.phoneNumber}</p>
-      </div>
-      <div class="w-1/2 text-right">
-        <span class="rounded-xl bg-purple-600 text-white p-2">
-          ${ride[0].numberOfPassengers} passengers
-        </span>
-      </div>
-    </div>
-    <div class="mt-4 flex">
-      <div class="w-1/2">
-        <div class="text-sm font-bold text-gray-600">PICKUP</div>
-        <p>${ride[0].pickupLocation.address}</p>
-        <p>${ride[0].pickupLocation.city}, ${ride[0].pickupLocation.state} ${ride[0].pickupLocation.zip}</p>
-      </div>
-      <div class="w-1/2">
-        <div class="text-sm font-bold text-gray-600">DROPOFF</div>
-        <p>${ride[0].dropoffLocation.address}t</p>
-        <p>${ride[0].dropoffLocation.city}, ${ride[0].dropoffLocation.state} ${ride[0].dropoffLocation.zip}</p>
-      </div>
-    </div>
-  </div>
- 
-  `)
-  
-
-  } else if (ride[0].numberOfPassengers > 3) {
-    levelOfService = 'Noober XL'
-    document.querySelector('.rides').insertAdjacentHTML('beforeend',` 
-
     <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
       <i class="fas fa-car-side"></i>
       <span>${levelOfService}</span>
     </h1>
 
-    <div class="border-4 border-gray-900 p-4 my-4 text-left">
+    <div class="border-4 border-purple-500 p-4 my-4 text-left">
       <div class="flex">
         <div class="w-1/2">
           <h2 class="text-2xl py-1">${ride[0].passengerDetails.first} ${ride[0].passengerDetails.last}</h2>
           <p class="font-bold text-gray-600">${ride[0].passengerDetails.phoneNumber}</p>
         </div>
         <div class="w-1/2 text-right">
-          <span class="rounded-xl bg-gray-600 text-white p-2">
-          ${ride[0].numberOfPassengers} passengers
+          <span class="rounded-xl bg-purple-600 text-white p-2">
+            ${ride[0].numberOfPassengers} passengers
           </span>
         </div>
       </div>
@@ -120,12 +83,54 @@ async function pageLoaded() {
         </div>
         <div class="w-1/2">
           <div class="text-sm font-bold text-gray-600">DROPOFF</div>
-          <p>${ride[0].dropoffLocation.address}</p>
+          <p>${ride[0].dropoffLocation.address}t</p>
           <p>${ride[0].dropoffLocation.city}, ${ride[0].dropoffLocation.state} ${ride[0].dropoffLocation.zip}</p>
         </div>
       </div>
     </div>
-`)
+ 
+  `)
+  
+// Noober XL
+
+} else if (ride[0].numberOfPassengers > 3) {
+    levelOfService = 'Noober XL'
+    
+    document.querySelector('.rides').insertAdjacentHTML('beforeend',` 
+      <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+        <i class="fas fa-car-side"></i>
+        <span>${levelOfService}</span>
+      </h1>
+
+      <div class="border-4 border-gray-900 p-4 my-4 text-left">
+        <div class="flex">
+          <div class="w-1/2">
+            <h2 class="text-2xl py-1">${ride[0].passengerDetails.first} ${ride[0].passengerDetails.last}</h2>
+            <p class="font-bold text-gray-600">${ride[0].passengerDetails.phoneNumber}</p>
+          </div>
+          <div class="w-1/2 text-right">
+            <span class="rounded-xl bg-gray-600 text-white p-2">
+            ${ride[0].numberOfPassengers} passengers
+            </span>
+          </div>
+        </div>
+        <div class="mt-4 flex">
+          <div class="w-1/2">
+            <div class="text-sm font-bold text-gray-600">PICKUP</div>
+            <p>${ride[0].pickupLocation.address}</p>
+            <p>${ride[0].pickupLocation.city}, ${ride[0].pickupLocation.state} ${ride[0].pickupLocation.zip}</p>
+          </div>
+          <div class="w-1/2">
+            <div class="text-sm font-bold text-gray-600">DROPOFF</div>
+            <p>${ride[0].dropoffLocation.address}</p>
+            <p>${ride[0].dropoffLocation.city}, ${ride[0].dropoffLocation.state} ${ride[0].dropoffLocation.zip}</p>
+          </div>
+        </div>
+      </div>
+    `)
+
+  // Noober X
+
   } else {
     levelOfService = 'Noober X'
     document.querySelector('.rides').insertAdjacentHTML('beforeend',`
@@ -133,44 +138,39 @@ async function pageLoaded() {
     <h1 class="inline-block mt-8 px-4 py-2 rounded-xl text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
     <i class="fas fa-car-side"></i>
     <span>${levelOfService}</span>
-  </h1>
+    </h1>
 
-  <div class="border-4 border-purple-500 p-4 my-4 text-left">
-    <div class="flex">
-      <div class="w-1/2">
-        <h2 class="text-2xl py-1">${ride[0].passengerDetails.first} ${ride[0].passengerDetails.last}</h2>
-        <p class="font-bold text-gray-600">${ride[0].passengerDetails.phoneNumber}</p>
+      <div class="border-4 border-purple-500 p-4 my-4 text-left">
+        <div class="flex">
+          <div class="w-1/2">
+            <h2 class="text-2xl py-1">${ride[0].passengerDetails.first} ${ride[0].passengerDetails.last}</h2>
+            <p class="font-bold text-gray-600">${ride[0].passengerDetails.phoneNumber}</p>
+          </div>
+          <div class="w-1/2 text-right">
+            <span class="rounded-xl bg-purple-600 text-white p-2">
+            ${ride[0].numberOfPassengers} passengers
+            </span>
+          </div>
+        </div>
+        <div class="mt-4 flex">
+          <div class="w-1/2">
+            <div class="text-sm font-bold text-gray-600">PICKUP</div>
+            <p>${ride[0].pickupLocation.address}</p>
+            <p>${ride[0].pickupLocation.city}, ${ride[0].pickupLocation.state} ${ride[0].pickupLocation.zip}</p>
+          </div>
+          <div class="w-1/2">
+            <div class="text-sm font-bold text-gray-600">DROPOFF</div>
+            <p>${ride[0].dropoffLocation.address}</p>
+            <p>${ride[0].dropoffLocation.city}, ${ride[0].dropoffLocation.state} ${ride[0].dropoffLocation.zip}</p>
+          </div>
+        </div>
       </div>
-      <div class="w-1/2 text-right">
-        <span class="rounded-xl bg-purple-600 text-white p-2">
-        ${ride[0].numberOfPassengers} passengers
-        </span>
-      </div>
-    </div>
-    <div class="mt-4 flex">
-      <div class="w-1/2">
-        <div class="text-sm font-bold text-gray-600">PICKUP</div>
-        <p>${ride[0].pickupLocation.address}</p>
-        <p>${ride[0].pickupLocation.city}, ${ride[0].pickupLocation.state} ${ride[0].pickupLocation.zip}</p>
-      </div>
-      <div class="w-1/2">
-        <div class="text-sm font-bold text-gray-600">DROPOFF</div>
-        <p>${ride[0].dropoffLocation.address}</p>
-        <p>${ride[0].dropoffLocation.city}, ${ride[0].dropoffLocation.state} ${ride[0].dropoffLocation.zip}</p>
-      </div>
-    </div>
-  </div>
     `)
   }
 
-  
 
   
-
-
-
-  
-} 
+  } 
 }
 
 window.addEventListener('DOMContentLoaded', pageLoaded)
